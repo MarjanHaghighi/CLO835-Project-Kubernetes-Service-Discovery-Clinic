@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment variables and credentials
+.env
+.env.*
+*.secret
+*.key
+*.pem
+
+# Virtual environments
+venv/
+.venv/
+
+# Editors
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+
+# Kubernetes generated or local files
+kubeconfig
+*.kubeconfig
+
+# Terraform, if accidentally created
+.terraform/
+*.tfstate
+*.tfstate.*

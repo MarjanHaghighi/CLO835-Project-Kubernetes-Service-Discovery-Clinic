@@ -1,0 +1,49 @@
+Script started on 2026-07-27 03:40:18+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="195" LINES="49"]
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl -n kube-system get pods -l k8s-app=kube-dns[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl -n kube-system get pods -l k8s-app=kube-dns
+[?2004lNAME                       READY   STATUS    RESTARTS   AGE
+coredns-6f6b679f8f-56gdb   1/1     Running   0          116m
+coredns-6f6b679f8f-r28kv   1/1     Running   0          116m
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl -n kube-system get configmap coredns -o yaml[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl -n kube-system get configmap coredns -o yaml
+[?2004lapiVersion: v1
+data:
+  Corefile: |
+    .:53 {
+        errors
+        health {
+           lameduck 5s
+        }
+        ready
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+           pods insecure
+           fallthrough in-addr.arpa ip6.arpa
+           ttl 30
+        }
+        prometheus :9153
+        forward . /etc/resolv.conf {
+           max_concurrent 1000
+        }
+        cache 30
+        loop
+        reload
+        loadbalance
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2026-07-27T01:43:36Z"
+  name: coredns
+  namespace: kube-system
+  resourceVersion: "263"
+  uid: aa7db9d2-c0e7-4435-aee8-48c39e815a29
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl -n kube-system logs -l k8s-app=kube-dns --tail=50[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl -n kube-system logs -l k8s-app=kube-dns --tail=50
+[?2004l.:53
+[INFO] plugin/reload: Running configuration SHA512 = 591cf328cccc12bc490481273e738df59329c62c0b729d94e8b61db9961c2fa5f046dd37f1cf888b953814040d180f52594972691cd6ff41be96639138a43908
+CoreDNS-1.11.1
+linux/amd64, go1.20.7, ae2bbc2
+.:53
+[INFO] plugin/reload: Running configuration SHA512 = 591cf328cccc12bc490481273e738df59329c62c0b729d94e8b61db9961c2fa5f046dd37f1cf888b953814040d180f52594972691cd6ff41be96639138a43908
+CoreDNS-1.11.1
+linux/amd64, go1.20.7, ae2bbc2
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ exit
+[?2004lexit
+
+Script done on 2026-07-27 03:40:49+00:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,29 @@
+Script started on 2026-07-27 03:33:57+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="195" LINES="49"]
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mcurl http://localhost:30080[27mcurl http://localhost:30080
+[?2004lstudent_id=127878254
+db_service=db-svc-127878254
+seeded_row_id=1
+seeded_item=dns-check-1
+seeded_student_id=127878254
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ curl http://localhost:30080
+[?2004lstudent_id=127878254
+db_service=db-svc-127878254
+seeded_row_id=4
+seeded_item=endpoint-check-4
+seeded_student_id=127878254
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ curl http://localhost:30080
+[?2004lstudent_id=127878254
+db_service=db-svc-127878254
+seeded_row_id=5
+seeded_item=coredns-check-5
+seeded_student_id=127878254
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ curl http://localhost:30080
+[?2004lstudent_id=127878254
+db_service=db-svc-127878254
+seeded_row_id=5
+seeded_item=coredns-check-5
+seeded_student_id=127878254
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ curl http://localhost:30080exit[K
+[?2004lexit
+
+Script done on 2026-07-27 03:34:35+00:00 [COMMAND_EXIT_CODE="0"]

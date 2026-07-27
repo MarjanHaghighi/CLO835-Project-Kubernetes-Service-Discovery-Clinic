@@ -1,0 +1,117 @@
+Script started on 2026-07-27 03:26:53+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="195" LINES="49"]
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mtree -a -L 3[27mtree -a -L 3
+[?2004l[01;34m.[0m
+├── [01;34m.git[0m
+│   ├── COMMIT_EDITMSG
+│   ├── FETCH_HEAD
+│   ├── HEAD
+│   ├── ORIG_HEAD
+│   ├── [01;34mbranches[0m
+│   ├── config
+│   ├── description
+│   ├── [01;34mhooks[0m
+│   │   ├── [01;32mapplypatch-msg.sample[0m
+│   │   ├── [01;32mcommit-msg.sample[0m
+│   │   ├── [01;32mfsmonitor-watchman.sample[0m
+│   │   ├── [01;32mpost-update.sample[0m
+│   │   ├── [01;32mpre-applypatch.sample[0m
+│   │   ├── [01;32mpre-commit.sample[0m
+│   │   ├── [01;32mpre-merge-commit.sample[0m
+│   │   ├── [01;32mpre-push.sample[0m
+│   │   ├── [01;32mpre-rebase.sample[0m
+│   │   ├── [01;32mpre-receive.sample[0m
+│   │   ├── [01;32mprepare-commit-msg.sample[0m
+│   │   ├── [01;32mpush-to-checkout.sample[0m
+│   │   └── [01;32mupdate.sample[0m
+│   ├── index
+│   ├── [01;34minfo[0m
+│   │   └── exclude
+│   ├── [01;34mlogs[0m
+│   │   ├── HEAD
+│   │   └── [01;34mrefs[0m
+│   ├── [01;34mobjects[0m
+│   │   ├── [01;34m0a[0m
+│   │   ├── [01;34m14[0m
+│   │   ├── [01;34m24[0m
+│   │   ├── [01;34m2b[0m
+│   │   ├── [01;34m40[0m
+│   │   ├── [01;34m45[0m
+│   │   ├── [01;34m46[0m
+│   │   ├── [01;34m4f[0m
+│   │   ├── [01;34m52[0m
+│   │   ├── [01;34m59[0m
+│   │   ├── [01;34m64[0m
+│   │   ├── [01;34m67[0m
+│   │   ├── [01;34m6d[0m
+│   │   ├── [01;34m77[0m
+│   │   ├── [01;34m87[0m
+│   │   ├── [01;34m89[0m
+│   │   ├── [01;34m8e[0m
+│   │   ├── [01;34ma9[0m
+│   │   ├── [01;34mac[0m
+│   │   ├── [01;34mae[0m
+│   │   ├── [01;34mb8[0m
+│   │   ├── [01;34mba[0m
+│   │   ├── [01;34mbc[0m
+│   │   ├── [01;34mbe[0m
+│   │   ├── [01;34mc5[0m
+│   │   ├── [01;34mc8[0m
+│   │   ├── [01;34mca[0m
+│   │   ├── [01;34mdc[0m
+│   │   ├── [01;34mde[0m
+│   │   ├── [01;34me0[0m
+│   │   ├── [01;34me1[0m
+│   │   ├── [01;34me9[0m
+│   │   ├── [01;34mf0[0m
+│   │   ├── [01;34minfo[0m
+│   │   └── [01;34mpack[0m
+│   ├── packed-refs
+│   └── [01;34mrefs[0m
+│       ├── [01;34mheads[0m
+│       ├── [01;34mremotes[0m
+│       └── [01;34mtags[0m
+├── [01;34m.github[0m
+│   └── [01;34mworkflows[0m
+│       └── docker-build-push.yml
+├── .gitignore
+├── README.md
+├── [01;32mbootstrap.sh[0m
+├── diagnosis-tree.md
+├── [01;34mevidence[0m
+│   ├── healthy-path.txt
+│   └── tree-output.txt
+├── healthy-baseline-results.txt
+├── [01;34mmanifests[0m
+│   ├── app-configmap.yaml
+│   ├── coredns-known-good.yaml
+│   ├── db-deployment.yaml
+│   ├── db-seed-configmap.yaml
+│   ├── db-service.yaml
+│   ├── debug-pod.yaml
+│   ├── kind-config.yaml
+│   ├── namespace.yaml
+│   ├── web-deployment.yaml
+│   └── web-service.yaml
+├── runbook.md
+├── [01;34mterraform[0m
+│   ├── main.tf
+│   ├── outputs.tf
+│   ├── providers.tf
+│   ├── terraform.tfvars
+│   ├── userdata.sh
+│   ├── variables.tf
+│   └── versions.tf
+├── [01;32mverify-clinic.sh[0m
+├── verify-output.txt
+└── [01;34mweb[0m
+    ├── Dockerfile
+    ├── requirements.txt
+    └── web_app.py
+
+52 directories, 54 files
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ exit
+[?2004lexit
+
+Script done on 2026-07-27 03:27:10+00:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,34 @@
+Script started on 2026-07-27 03:31:36+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="195" LINES="49"]
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get svc,endpoints db-svc-127878254 -n clinic-127878254 -o wide[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl get svc,endpoints db-svc-127878254 -n clinic-127878254 -o wide
+[?2004lNAME                       TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE    SELECTOR
+service/db-svc-127878254   ClusterIP   10.96.148.182   <none>        3306/TCP   107m   app=db,owner=127878254
+
+NAME                         ENDPOINTS         AGE
+endpoints/db-svc-127878254   10.244.2.2:3306   107m
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl describe svc db-svc-127878254 -n clinic-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl describe svc db-svc-127878254 -n clinic-127878254
+[?2004lName:                     db-svc-127878254
+Namespace:                clinic-127878254
+Labels:                   <none>
+Annotations:              <none>
+Selector:                 app=db,owner=127878254
+Type:                     ClusterIP
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.96.148.182
+IPs:                      10.96.148.182
+Port:                     mysql  3306/TCP
+TargetPort:               3306/TCP
+Endpoints:                10.244.2.2:3306
+Session Affinity:         None
+Internal Traffic Policy:  Cluster
+Events:                   <none>
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get pods --show-labels -n clinic-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl get pods --show-labels -n clinic-127878254
+[?2004lNAME                             READY   STATUS    RESTARTS   AGE    LABELS
+db-127878254-586c9d5b97-phjkd    1/1     Running   0          108m   app=db,owner=127878254,pod-template-hash=586c9d5b97
+debug-127878254                  1/1     Running   0          107m   app=debug,owner=127878254
+web-127878254-5d76f5f777-ml9wz   1/1     Running   0          107m   app=web,owner=127878254,pod-template-hash=5d76f5f777
+web-127878254-5d76f5f777-nqcnf   1/1     Running   0          107m   app=web,owner=127878254,pod-template-hash=5d76f5f777
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ exit
+[?2004lexit
+
+Script done on 2026-07-27 03:32:23+00:00 [COMMAND_EXIT_CODE="0"]

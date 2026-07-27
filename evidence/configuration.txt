@@ -1,0 +1,98 @@
+Script started on 2026-07-27 03:36:28+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="195" LINES="49"]
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get configmaps -n clinic-127878254[27mkubectl get configmaps -n clinic-127878254
+[?2004lNAME                   DATA   AGE
+app-config-127878254   6      112m
+db-seed-127878254      1      112m
+kube-root-ca.crt       1      112m
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl describe configmap app-config -n clinic-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl describe configmap app-config -n clinic-127878254
+[?2004lName:         app-config-127878254
+Namespace:    clinic-127878254
+Labels:       app=web
+              student-id=127878254
+Annotations:  <none>
+
+Data
+====
+DB_HOST:
+----
+db-svc-127878254
+
+DB_NAME:
+----
+clinicdb
+
+DB_PORT:
+----
+3306
+
+DB_USER:
+----
+clinicuser
+
+STUDENT_ID:
+----
+127878254
+
+APP_PORT:
+----
+8080
+
+
+BinaryData
+====
+
+Events:  <none>
+
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get secrets -n clinic-127878254[27mkubectl get secrets -n clinic-127878254
+[?2004lNAME                  TYPE     DATA   AGE
+db-secret-127878254   Opaque   2      112m
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl describe deployment web-127878254 -n clinic-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl describe deployment web-127878254 -n clinic-127878254
+[?2004l
+Name:                   web-127878254
+Namespace:              clinic-127878254
+CreationTimestamp:      Mon, 27 Jul 2026 01:44:40 +0000
+Labels:                 app=web
+                        owner=127878254
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=web,owner=127878254
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=web
+           owner=127878254
+  Containers:
+   web:
+    Image:      marjanhaghighi/clo835-project-service-discovery-web:v1
+    Port:       8080/TCP
+    Host Port:  0/TCP
+    Limits:
+      cpu:     250m
+      memory:  256Mi
+    Requests:
+      cpu:      50m
+      memory:   64Mi
+    Liveness:   http-get http://:http/live delay=10s timeout=2s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/ready delay=5s timeout=4s period=5s #success=1 #failure=2
+    Environment Variables from:
+      app-config-127878254  ConfigMap  Optional: false
+    Environment:
+      DB_PASSWORD:  <set to the key 'DB_PASSWORD' in secret 'db-secret-127878254'>  Optional: false
+    Mounts:         <none>
+  Volumes:          <none>
+  Node-Selectors:   <none>
+  Tolerations:      <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   web-127878254-5d76f5f777 (2/2 replicas created)
+Events:          <none>
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ exit
+[?2004lexit
+
+Script done on 2026-07-27 03:37:13+00:00 [COMMAND_EXIT_CODE="0"]

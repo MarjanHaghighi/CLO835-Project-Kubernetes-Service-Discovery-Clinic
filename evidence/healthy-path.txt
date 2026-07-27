@@ -1,0 +1,93 @@
+Script started on 2026-07-27 03:17:54+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="195" LINES="49"]
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get nodes[27mkubectl get nodes
+[?2004lNAME                             STATUS   ROLES           AGE   VERSION
+clinic-127878254-control-plane   Ready    control-plane   95m   v1.31.0
+clinic-127878254-worker          Ready    <none>          94m   v1.31.0
+clinic-127878254-worker2         Ready    <none>          94m   v1.31.0
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get all -n clinic-127878254[27mkubectl get all -n clinic-127878254
+[?2004lNAME                                 READY   STATUS    RESTARTS   AGE
+pod/db-127878254-586c9d5b97-phjkd    1/1     Running   0          94m
+pod/debug-127878254                  1/1     Running   0          94m
+pod/web-127878254-5d76f5f777-ml9wz   1/1     Running   0          94m
+pod/web-127878254-5d76f5f777-nqcnf   1/1     Running   0          94m
+
+NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+service/db-svc-127878254    ClusterIP   10.96.148.182   <none>        3306/TCP       94m
+service/web-svc-127878254   NodePort    10.96.216.3     <none>        80:30080/TCP   94m
+
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/db-127878254    1/1     1            1           94m
+deployment.apps/web-127878254   2/2     2            2           94m
+
+NAME                                       DESIRED   CURRENT   READY   AGE
+replicaset.apps/db-127878254-586c9d5b97    1         1         1       94m
+replicaset.apps/web-127878254-5d76f5f777   2         2         2       94m
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get svc -n clinic-127878254[27mkubectl get svc -n clinic-127878254
+[?2004lNAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+db-svc-127878254    ClusterIP   10.96.148.182   <none>        3306/TCP       95m
+web-svc-127878254   NodePort    10.96.216.3     <none>        80:30080/TCP   94m
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get endpoints -n clinic-127878254[27mkubectl get endpoints -n clinic-127878254
+[?2004lNAME                ENDPOINTS                         AGE
+db-svc-127878254    10.244.2.2:3306                   95m
+web-svc-127878254   10.244.1.3:8080,10.244.2.3:8080   94m
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get pods -o wide -n clinic-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl get pods -o wide -n clinic-127878254
+[?2004lNAME                             READY   STATUS    RESTARTS   AGE   IP           NODE                       NOMINATED NODE   READINESS GATES
+db-127878254-586c9d5b97-phjkd    1/1     Running   0          95m   10.244.2.2   clinic-127878254-worker    <none>           <none>
+debug-127878254                  1/1     Running   0          94m   10.244.1.2   clinic-127878254-worker2   <none>           <none>
+web-127878254-5d76f5f777-ml9wz   1/1     Running   0          94m   10.244.1.3   clinic-127878254-worker2   <none>           <none>
+web-127878254-5d76f5f777-nqcnf   1/1     Running   0          94m   10.244.2.3   clinic-127878254-worker    <none>           <none>
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl exec -it debug-127878254 -n clinic-127878254 -- cat /etc/resolv.conf[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl exec -it debug-127878254 -n clinic-127878254 -- cat /etc/resolv.conf
+[?2004lsearch clinic-127878254.svc.cluster.local svc.cluster.local cluster.local ec2.internal
+nameserver 10.96.0.10
+options ndots:5
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254
+[?2004lServer:		10.96.0.10
+Address:	10.96.0.10:53
+
+Name:	db-svc-127878254.clinic-127878254.svc.cluster.local
+Address: 10.96.148.182
+
+
+** server can't find db-svc-127878254.cluster.local: NXDOMAIN
+
+** server can't find db-svc-127878254.svc.cluster.local: NXDOMAIN
+
+** server can't find db-svc-127878254.svc.cluster.local: NXDOMAIN
+
+** server can't find db-svc-127878254.cluster.local: NXDOMAIN
+
+** server can't find db-svc-127878254.ec2.internal: NXDOMAIN
+
+** server can't find db-svc-127878254.ec2.internal: NXDOMAIN
+
+command terminated with exit code 1
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254.clinic-127878254.svc.cluster.local[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254.clinic-127878254.svc.cluster.local
+[?2004lServer:		10.96.0.10
+Address:	10.96.0.10:53
+
+
+Name:	db-svc-127878254.clinic-127878254.svc.cluster.local
+Address: 10.96.148.182
+
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get endpoints db-svc-127878254 -n clinic-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl get endpoints db-svc-127878254 -n clinic-127878254
+[?2004lNAME               ENDPOINTS         AGE
+db-svc-127878254   10.244.2.2:3306   96m
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get svc web-svc-127878254 -n clinic-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl get svc web-svc-127878254 -n clinic-127878254
+[?2004lNAME                TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
+web-svc-127878254   NodePort   10.96.216.3   <none>        80:30080/TCP   95m
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ 
+[?2004l[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ exit
+[?2004lexit
+
+Script done on 2026-07-27 03:23:19+00:00 [COMMAND_EXIT_CODE="0"]

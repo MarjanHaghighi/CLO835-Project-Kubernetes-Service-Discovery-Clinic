@@ -1,0 +1,65 @@
+Script started on 2026-07-27 03:29:05+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="195" LINES="49"]
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl exec -it debug-127878254 -n clinic-127878254 -- cat /etc/resolv.conf[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl exec -it debug-127878254 -n clinic-127878254 -- cat /etc/resolv.conf
+[?2004lsearch clinic-127878254.svc.cluster.local svc.cluster.local cluster.local ec2.internal
+nameserver 10.96.0.10
+options ndots:5
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254
+[?2004lServer:		10.96.0.10
+Address:	10.96.0.10:53
+
+Name:	db-svc-127878254.clinic-127878254.svc.cluster.local
+Address: 10.96.148.182
+
+** server can't find db-svc-127878254.svc.cluster.local: NXDOMAIN
+
+
+** server can't find db-svc-127878254.cluster.local: NXDOMAIN
+
+** server can't find db-svc-127878254.svc.cluster.local: NXDOMAIN
+
+** server can't find db-svc-127878254.cluster.local: NXDOMAIN
+
+** server can't find db-svc-127878254.ec2.internal: NXDOMAIN
+
+** server can't find db-svc-127878254.ec2.internal: NXDOMAIN
+
+command terminated with exit code 1
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254.clinic-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254.clinic-127878254
+[?2004lServer:		10.96.0.10
+Address:	10.96.0.10:53
+
+** server can't find db-svc-127878254.clinic-127878254: NXDOMAIN
+
+** server can't find db-svc-127878254.clinic-127878254: NXDOMAIN
+
+command terminated with exit code 1
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254.clinic-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254.clinic-127878254
+[?2004lServer:		10.96.0.10
+Address:	10.96.0.10:53
+
+** server can't find db-svc-127878254.clinic-127878254: NXDOMAIN
+
+** server can't find db-svc-127878254.clinic-127878254: NXDOMAIN
+
+command terminated with exit code 1
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254.clinic-127878254.svc[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254.clinic-127878254.svc
+[?2004lServer:		10.96.0.10
+Address:	10.96.0.10:53
+
+** server can't find db-svc-127878254.clinic-127878254.svc: NXDOMAIN
+
+** server can't find db-svc-127878254.clinic-127878254.svc: NXDOMAIN
+
+command terminated with exit code 1
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254.clinic-127878254.svc.cluster.local[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl exec -it debug-127878254 -n clinic-127878254 -- nslookup db-svc-127878254.clinic-127878254.svc.cluster.local
+[?2004lServer:		10.96.0.10
+Address:	10.96.0.10:53
+
+
+Name:	db-svc-127878254.clinic-127878254.svc.cluster.local
+Address: 10.96.148.182
+
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ exit
+[?2004lexit
+
+Script done on 2026-07-27 03:31:23+00:00 [COMMAND_EXIT_CODE="0"]

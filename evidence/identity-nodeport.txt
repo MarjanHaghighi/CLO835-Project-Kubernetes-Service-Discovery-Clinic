@@ -1,0 +1,8 @@
+Script started on 2026-07-27 03:33:35+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="195" LINES="49"]
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ [7mkubectl get svc web-svc-127878254 -n clinic-127878254[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl get svc web-svc-127878254 -n clinic-127878254
+[?2004lNAME                TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
+web-svc-127878254   NodePort   10.96.216.3   <none>        80:30080/TCP   109m
+[?2004h]0;ubuntu@ip-172-31-44-54: ~/clo835-project[01;32mubuntu@ip-172-31-44-54[00m:[01;34m~/clo835-project[00m$ exit
+[?2004lexit
+
+Script done on 2026-07-27 03:33:48+00:00 [COMMAND_EXIT_CODE="0"]

@@ -1,39 +1,24 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-
-# Environment variables and credentials
 .env
-.env.*
-*.secret
+*.env
+
+# Kubernetes secrets
+manifests/db-secret.yaml
+
+# Private keys and certificates
 *.key
 *.pem
+*.crt
 
-# Virtual environments
-venv/
-.venv/
+# Python
+__pycache__/
+*.pyc
+*.pyo
 
-# Editors
-.vscode/
-.idea/
-
-# Logs
-*.log
-
-# Operating system files
+# macOS
 .DS_Store
-Thumbs.db
 
-# Temporary files
-*.tmp
-*.swp
+# VS Code
+.vscode/
 
-# Kubernetes generated or local files
-kubeconfig
-*.kubeconfig
-
-# Terraform, if accidentally created
-.terraform/
-*.tfstate
-*.tfstate.*
+# JetBrains IDEs
+.idea/ 

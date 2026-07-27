@@ -37,11 +37,12 @@ def query_database():
         )
 
         cursor = connection.cursor()
-        cursor.execute(
-            """
+
+
+        cursor.execute("""
             SELECT id, item_name, student_id
             FROM clinic_items
-            ORDER BY id
+            ORDER BY RAND()
             LIMIT 1
             """
         )

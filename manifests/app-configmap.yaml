@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config-127878254
+  namespace: clinic-127878254
+  labels:
+    app: web
+    student-id: "127878254"
+data:
+  STUDENT_ID: "127878254"
+  DB_HOST: "db-svc-127878254"
+  DB_PORT: "3306"
+  DB_NAME: "clinicdb"
+  DB_USER: "clinicuser"
+  APP_PORT: "8080"

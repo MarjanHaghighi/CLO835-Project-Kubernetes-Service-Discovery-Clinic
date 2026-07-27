@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug-127878254
+  namespace: clinic-127878254
+  labels:
+    app: debug
+    owner: "127878254"
+spec:
+  containers:
+    - name: debug
+      image: busybox:1.36
+      command: ["sh", "-c", "sleep infinity"]
+  restartPolicy: Always
